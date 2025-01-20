@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .column {
+            display: flex;
+            margin: 0 50px;
+        }
+        .column .left, .column .right {
+            width: 30%;
+            padding: 10px;
+        }
+        .vertical-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="showTab('resume')">My Resume</a>
+        <a href="#" onclick="showTab('myself')">Myself</a>
+        <a href="#" onclick="showTab('family')">My Family</a>
+        <a href="#" onclick="showTab('favorites')">My Favorites</a>
+    </nav>
+    <div class="content">
+        <div id="resume" class="tab-content active">
+            <h2>My Resume</h2>
+            <div class="column">
+                <div class="left">
+                    <img src="pfp.jpg">
+                    <ul>
+			<li><strong>Contact Information:</strong></li>
+                        <li><strong>Contact:</strong> 639694852170</li>
+                        <li><strong>Gmail:</strong> vinceian.jauculan@cvsu.edu.ph</li><br>
+			<li><strong>Personal Information:</strong></li>
+                        <li><strong>Age:</strong> 19 Years Old</li>
+                        <li><strong>Height:</strong> 160cm</li>
+                        <li><strong>Weight:</strong> 48kg</li>
+                        <li><strong>Religion:</strong> Roman Catholic</li>
+                        <li><strong>Nationality:</strong> Filipino</li><br>
+			<li><strong>Student Organizations:</strong></li>
+                        <li>Computer Science Clique(2024-2028)</li>
+                        <li>Heroes Game Advance(2024-2028)</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <h1>Vince Ian S. Jauculan</h1>
+                    <h3>Educational Background</h3>
+                    <ul>
+                        <li>Cavite State University Imus, Cavite(2024-2028)</li>
+                        <li>Southern Philippines Institute of Science and Technology Imus, Cavite(2022-2024)</li>
+                        <li>Imus National High School Imus, Cavite(2018-2022)</li>
+                        <li>Anabu 1 Elementary School Imus, Cavite(2017-2018)</li>
+                        <li>Ilaya Barangka Integrated School Imus, Cavite(2012-2017)</li>
+                    </ul>
+                    <h3>Hard Skills</h3>
+                    <ul>
+                        <li>Programming</li>
+                        <li>Web Development</li>
+                        <li>Accounting</li>
+                        <li>Graphic Design</li>
+                        <li>Project Management</li>
+                        <li>Data Analysis</li>
+                        <li>Cloud Computing</li>
+                        <li>Cybersecurity</li>
+                    </ul>
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Adaptability</li>
+                        <li>Teamwork</li>
+                        <li>Problem Solving</li>
+                        <li>Time Management</li>
+                        <li>Leadership</li>
+                        <li>Critical Thinking</li>
+                        <li>Work Ethic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="myself" class="tab-content">
+            <h2>About Myself</h2>
+            <p>Hello everyone, I am Vince and these are my likes and dislikes.</p>
+            <div class="vertical-list">
+                <div>
+		    <h3>My Likes</h3>
+                    <p>Video Games</p>
+                    <img src="like1.jpg" width="200" height="200">
+                </div>
+                <div>
+                    <p>Reading</p>
+                    <img src="like2.jpg" width="200" height="200">
+                </div>
+                <div>
+                    <p>Watching</p>
+                    <img src="like3.jpg" width="200" height="200">
+                </div>
+                <div>
+		    <h3>My Dislikes</h3>
+                    <p>Drama</p>
+                    <img src="dislike1.jpeg" width="200" height="200">
+                </div>
+            </div>
+        </div>
+        <div id="family" class="tab-content">
+            <h2>My Family</h2>
+            <div class="grid">
+                <div>
+                    <img src="mom.jpg" alt="Family Member 1">
+                    <p>Adelyn S. Jauculan</p>
+                </div>
+                <div>
+                    <img src="dad.jpg" alt="Family Member 2">
+                    <p>Alan J. Jauculan</p>
+                </div>
+                <div>
+                    <img src="bro.jpg" alt="Family Member 3">
+                    <p>Niel Allen S. Jauculan</p>
+                </div>
+                <div>
+                    <img src="sis.jpg" alt="Family Member 4">
+                    <p>Yvonne Louise S. Jauculan</p>
+                </div>
+            </div>
+        </div>
+        <div id="favorites" class="tab-content">
+            <h2>My Favorites</h2>
+            <div class="vertical-list">
+                <div>
+                    <p>Lasagna</p>
+                    <img src="food.jpg" alt="Favorite Food 1">
+                </div>
+                <div>
+                    <p>Hello World</p>
+                    <img src="movie.jpg" alt="Favorite Movie 1">
+                </div>
+                <div>
+                    <p>Ark: Survival Evolved</p>
+                    <img src="game.jpg" alt="Favorite Game 1">
+                </div>
+                <div>
+                    <p>Code Geass</p>
+                    <img src="series.jpg" alt="Favorite Series 1">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
