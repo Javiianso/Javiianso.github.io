@@ -20,19 +20,30 @@
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a.active {
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
         }
         nav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #555;
+            color: white;
         }
         .content {
             padding: 20px;
         }
         .tab-content {
             display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s, transform 0.5s;
         }
         .tab-content.active {
             display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
         img {
             max-width: 100%;
@@ -67,9 +78,19 @@
     <script>
         function showTab(tabId) {
             const tabs = document.querySelectorAll('.tab-content');
+            const links = document.querySelectorAll('nav a');
+
             tabs.forEach(tab => tab.classList.remove('active'));
+            links.forEach(link => link.classList.remove('active'));
+
             document.getElementById(tabId).classList.add('active');
+            document.querySelector(`nav a[onclick="showTab('${tabId}')"]`).classList.add('active');
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set the default active tab
+            showTab('resume');
+        });
     </script>
 </head>
 <body>
@@ -80,22 +101,22 @@
         <a href="#" onclick="showTab('favorites')">My Favorites</a>
     </nav>
     <div class="content">
-        <div id="resume" class="tab-content active">
+        <div id="resume" class="tab-content">
             <h2>My Resume</h2>
             <div class="column">
                 <div class="left">
                     <img src="pfp.jpg">
                     <ul>
-			<li><strong>Contact Information:</strong></li>
+                        <li><strong>Contact Information:</strong></li>
                         <li><strong>Contact:</strong> 639694852170</li>
                         <li><strong>Gmail:</strong> vinceian.jauculan@cvsu.edu.ph</li><br>
-			<li><strong>Personal Information:</strong></li>
+                        <li><strong>Personal Information:</strong></li>
                         <li><strong>Age:</strong> 19 Years Old</li>
                         <li><strong>Height:</strong> 160cm</li>
                         <li><strong>Weight:</strong> 48kg</li>
                         <li><strong>Religion:</strong> Roman Catholic</li>
                         <li><strong>Nationality:</strong> Filipino</li><br>
-			<li><strong>Student Organizations:</strong></li>
+                        <li><strong>Student Organizations:</strong></li>
                         <li>Computer Science Clique(2024-2028)</li>
                         <li>Heroes Game Advance(2024-2028)</li>
                     </ul>
@@ -140,7 +161,7 @@
             <p>Hello everyone, I am Vince and these are my likes and dislikes.</p>
             <div class="vertical-list">
                 <div>
-		    <h3>My Likes</h3>
+                    <h3>My Likes</h3>
                     <p>Video Games</p>
                     <img src="like1.jpg" width="200" height="200">
                 </div>
@@ -153,7 +174,7 @@
                     <img src="like3.jpg" width="200" height="200">
                 </div>
                 <div>
-		    <h3>My Dislikes</h3>
+                    <h3>My Dislikes</h3>
                     <p>Drama</p>
                     <img src="dislike1.jpeg" width="200" height="200">
                 </div>
